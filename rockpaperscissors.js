@@ -5,6 +5,9 @@ const getUserChoice = userInput => {
   if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
     return userInput;
   }
+  else if (userInput === 'bomb') {
+    return userInput; 
+  }
   else {
     console.log('Incorrect input. Please enter a valid choice.');
   }
@@ -54,7 +57,10 @@ function determineWinner(userChoice, computerChoice) {
     else {
       return 'Scissors cuts paper.  You win!';
     }
-  } 
+  }
+  if (userChoice === 'bomb') {
+    return 'You dropped a bomb.  You win!';
+  }
 }
 
 function playGame(userInput) { //This functi
@@ -68,5 +74,5 @@ function playGame(userInput) { //This functi
   console.log(determineWinner(userChoice,computerChoice));
 }
 
-playGame('scissors');
+playGame('bomb');
 
